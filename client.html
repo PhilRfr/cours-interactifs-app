@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Client</title>
+	<meta charset="UTF-8">
+</head>
+<link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsenui.css">
+<link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsen-css-components.min.css">
+<script src="https://unpkg.com/onsenui/js/onsenui.min.js"></script>
+<script src="client.js"></script>
+<script src="ui.js"></script>
+<body>
+	<ons-navigator id="myNavigator" page="login.html"></ons-navigator>
+	<template id="login.html">
+		<ons-page id="login">
+			<ons-toolbar>
+				<div class="center">Connexion</div>
+			</ons-toolbar>
+			<div style="text-align: center; margin-top: 30px;">
+				<p>
+					<ons-input id="name" modifier="underbar" placeholder="Nom" float></ons-input>
+				</p>
+				<p>
+					<ons-input id="firstname" modifier="underbar" placeholder="Prénom" float></ons-input>
+				</p>
+				<p>
+					<ons-input id="password" modifier="underbar" type="password" placeholder="Mot de passe" float></ons-input>
+				</p>
+				<p style="margin-top: 30px;">
+					<ons-button id="push-button">Connexion</ons-button>
+				</p>
+			</div>
+		</ons-page>
+	</template>
+	
+	<template id="main.html">
+		<ons-page id="main">
+			<ons-toolbar>
+					<div class="center">Salle actuelle : <select id="roomSelector" onchange="changeRoom(event)"></select></div>
+			</ons-toolbar>
+			
+			<ons-tabbar swipeable position="auto" id="tabs">
+				<ons-tab page="tab1.html" label="Commentaire" icon="fa-comment" active>
+				</ons-tab>
+				<ons-tab page="question.html" label="Question" icon="fa-marker">
+				</ons-tab>
+			</ons-tabbar>
+		</ons-page>
+	</template>
+	
+	<template id="rooms.html">
+		<ons-page id="rooms">
+			<p style="text-align: center;">
+			</p>
+		</ons-page>
+	</template>
+	<template id="tab1.html">
+		<ons-page id="Tab1">
+			<p style="text-align: center;">
+				This is the first page.
+			</p>
+		</ons-page>
+	</template>
+	
+	<template id="question.html">
+		<ons-page id="Tab2">
+			<ons-list id="dynamic-question"></ons-list>
+		</ons-page>
+	</template>
+</body>
+<script language="JavaScript">
+
+</script>
+
+</html>
